@@ -45,7 +45,7 @@ class GroupsController < ApplicationController
         end
 
         def join
-          @group = Group.find(params[id])
+          @group = Group.find(params[:id])
 
           if !current_user.is_member_of?(@group)
             current_user.join!(@group)
